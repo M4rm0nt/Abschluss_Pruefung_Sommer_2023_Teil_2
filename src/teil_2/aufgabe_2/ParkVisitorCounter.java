@@ -30,15 +30,15 @@ public class ParkVisitorCounter {
         StringBuilder sb = new StringBuilder();
         sb.append("Tag/std,");
         for (int i = 9; i < 19; i++) {
-            sb.append(i + ":00-" + i + ":59,");
+            sb.append(i).append(":00-").append(i).append(":59,");
         }
         sb.setLength(sb.length() - 1);
         sb.append("\n");
 
         for (int i = 0; i < visitorCount.length; i++) {
-            sb.append((i + 1) + ",");
+            sb.append((i + 1)).append(",");
             for (int j = 0; j < visitorCount[i].length; j++) {
-                sb.append(visitorCount[i][j] + ",");
+                sb.append(visitorCount[i][j]).append(",");
             }
             sb.setLength(sb.length() - 1);
             sb.append("\n");
@@ -47,7 +47,7 @@ public class ParkVisitorCounter {
     }
 
     public static Integer[][] countVisitors(ComeLeave[] entries) {
-        int daysInMonth = getDaysOfMonth(entries[0].getDate());
+        int daysInMonth = getDaysOfMonth(entries[0].date());
         Integer[][] visitorCount = new Integer[daysInMonth][10];
 
         for (int i = 0; i < daysInMonth; i++) {
@@ -59,14 +59,14 @@ public class ParkVisitorCounter {
         int[] currentVisitors = new int[daysInMonth];
 
         for (ComeLeave entry : entries) {
-            int day = getDay(entry.getDate()) - 1;
-            int hour = getHour(entry.getDate()) - 9;
+            int day = getDay(entry.date()) - 1;
+            int hour = getHour(entry.date()) - 9;
 
             if (hour >= 0 && hour < 10) {
-                if (entry.getComeInOut() == 0) {
-                    currentVisitors[day] += entry.getNoPeople();
+                if (entry.comeInOut() == 0) {
+                    currentVisitors[day] += entry.noPeople();
                 } else {
-                    currentVisitors[day] = Math.max(0, currentVisitors[day] - entry.getNoPeople());
+                    currentVisitors[day] = Math.max(0, currentVisitors[day] - entry.noPeople());
                 }
                 visitorCount[day][hour] = currentVisitors[day];
             }
@@ -119,31 +119,6 @@ public static ComeLeave[] generateRandomEntries(int year, int month) {
     return entries;
 }
 
-    public static class ComeLeave {
-
-        private Date date;
-        private Integer comeInOut;
-        private Integer noPeople;
-
-        public ComeLeave(Date date, Integer comeInOut, Integer noPeople) {
-            this.date = date;
-            this.comeInOut = comeInOut;
-            this.noPeople = noPeople;
-        }
-
-        public Date getDate() {
-            return date;
-        }
-        public Integer getComeInOut() {
-            return comeInOut;
-        }
-        public Integer getNoPeople() {
-            return noPeople;
-        }
-        public void setNoPeople(Integer noPeople) {
-            this.noPeople = noPeople;
-        }
-
-    }
+    public record ComeLeave(Date date, Integer comeInOut, Integer noPeople) {}
 
 }
