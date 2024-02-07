@@ -56,16 +56,18 @@ INSERT INTO Pflegearbeit (PID, OID, TID, MID_SOLL, MID_IST, Datum_Soll, Datum_Ab
 INSERT INTO Pflegearbeit (PID, OID, TID, MID_SOLL, MID_IST, Datum_Soll, Datum_Abschluss) VALUES (5, 2, 3, 31, NULL, '2023-07-28', NULL);
 
 select * from Pflegearbeit;
-
+```
 
 --------------------------------------------------------------
 
 Aufgabe 1a)
 
+```sql
 SELECT COUNT(*)
 FROM Pflegearbeit
 WHERE EXTRACT(YEAR FROM Datum_Soll) = 2023
   AND (Datum_Abschluss IS NULL OR EXTRACT(YEAR FROM Datum_Abschluss) > 2023);
+```
 
 --------------------------------------------------------------
 

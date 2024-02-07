@@ -1,4 +1,4 @@
-package aufgabe_2;
+package teil_2.aufgabe_2;
 
 import java.io.PrintWriter;
 import java.util.Calendar;

@@ -1,4 +1,4 @@
-package aufgabe_3;
+package teil_2.aufgabe_3;
 
 import java.util.HashMap;
 import java.util.Map;

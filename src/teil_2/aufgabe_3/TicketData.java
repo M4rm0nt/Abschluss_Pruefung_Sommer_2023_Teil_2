@@ -1,4 +1,4 @@
-package aufgabe_3;
+package teil_2.aufgabe_3;
 
 public class TicketData {
     private int id;

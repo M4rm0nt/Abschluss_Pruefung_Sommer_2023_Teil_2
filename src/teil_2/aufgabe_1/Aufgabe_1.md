@@ -15,9 +15,9 @@ Gärtner:
     11.) Pflanze in Quarantänestation bringen.
     12.) Pflanzen prüfen und Quarantäneende überwachen.  
     13.) Entscheidung: Ist die Pflanze krank?
-    14.) Wenn ja: Krankheit behandeln und Quarantäne für andere Pflanzen verlängern.
-        13.) Entscheidung: Ist die Pflanze krank?
-    14.) Wenn nein und Quarantäne beendet: Pflanze pflanzen.
+        Wenn ja: Krankheit behandeln und Quarantäne für andere Pflanzen verlängern. Dann zurück zu Schritt 13.
+        Wenn nein und Quarantäne beendet: Pflanze pflanzen.
+    14.) Pflanze pflanzen.
     15.) Bilder machen.
 
 Einkauf:
@@ -32,3 +32,4 @@ Lieferant:
     6.) Bestellung vom Einkauf erhalten.
     7.) Bestellung bearbeiten.
     8.) Pflanze ausliefern.
+
