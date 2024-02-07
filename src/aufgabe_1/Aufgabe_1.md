@@ -16,6 +16,7 @@ Gärtner:
     12.) Pflanzen prüfen und Quarantäneende überwachen.  
     13.) Entscheidung: Ist die Pflanze krank?
     14.) Wenn ja: Krankheit behandeln und Quarantäne für andere Pflanzen verlängern.
+        13.) Entscheidung: Ist die Pflanze krank?
     14.) Wenn nein und Quarantäne beendet: Pflanze pflanzen.
     15.) Bilder machen.
 
